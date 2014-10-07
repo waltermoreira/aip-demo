@@ -1,0 +1,7 @@
+---
+name: query_thalemine_as_jbrowse_index
+version: 0.1
+description: Query Thalemine as Jbrowse Index
+type: map_filter
+main_module: queryThalemineAsJbrowseIndex/main.py
+url: https://apps.araport.org/thalemine/service/jbrowse/names/3702
