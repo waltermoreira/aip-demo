@@ -2,17 +2,23 @@
 Using the generator:
 ====================
 
+::
+
     docker run -it -v $(pwd):/target araport/adapter-generator /generator create
 
 
 Checking Adama status:
 ======================
 
+::
+
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/status
 
 
 Registering a namespace:
 ========================
+
+::
 
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/namespaces \
          -X POST \
@@ -26,10 +32,14 @@ Expressologs by Locus
 Test function:
 --------------
 
+::
+
     >>> main.search({'locus': 'AT1G10200'})
 
 Register a service:
 -------------------
+
+::
 
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/services \
          -X POST \
@@ -40,10 +50,14 @@ Register a service:
 Query:
 ------
 
+::
+
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/expressologs_by_locus_v0.1/search\?locus\=AT1G10200
 
 Delete:
 -------
+
+::
 
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/expressologs_by_locus_v0.1 \
          -X DELETE \
@@ -55,6 +69,8 @@ Thalemine as Jbrowse
 
 Test function:
 --------------
+
+::
 
     >>> main.map_filter({
           "location": {
@@ -70,6 +86,8 @@ Test function:
 Register a service:
 -------------------
 
+::
+
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/services \
          -X POST \
          -F git_repository=https://github.com/waltermoreira/aip-demo.git \
@@ -79,10 +97,14 @@ Register a service:
 Query:
 ------
 
+::
+
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/query_thalemine_as_jbrowse_index_v0.1/search\?startswith\=FWA
 
 Delete the service:
 -------------------
+
+::
 
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/demo/query_thalemine_as_jbrowse_index_v0.1 \
          -X DELETE \
@@ -91,5 +113,7 @@ Delete the service:
 
 A /list example
 ===============
+
+::
 
     curl -k https://adama-dev.tacc.utexas.edu/community/v0.3/vaughn-dev/resolver_synonym_kinds_v0.1/list
