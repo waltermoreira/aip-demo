@@ -1,10 +1,13 @@
+===========
+Demo Agenda
+===========
 
 Using the generator:
 ====================
 
 ::
 
-    docker run -it -v $(pwd):/target araport/adapter-generator /generator create
+    docker run -it -v $(pwd):/target araport/adapter-generator create
 
 
 Checking Adama status:
