@@ -13,13 +13,18 @@ def search(arg):
     # Format the query into BAR's idiomatic scheme
     request_param = '[{%22gene%22:%22' + locus + '%22}]'
     svc_url = bar_common.base_url() + '/get_expressologs.php?request=' + request_param
+
+    #########################
     r = requests.get(svc_url)
+    #########################
 
     # Iterate over expressolog records and transform them to locus_relationship
     # Each record will return
     p = re.compile('dataSource=([\d\w]+)')
 
+    ##############################
     for record in r.json()[locus]:
+    ##############################
         # Extract the source data set out of the eFPWeb URI
         efp_link = record['efp_link']
         source = p.search(efp_link)
@@ -57,8 +62,10 @@ def search(arg):
             }
         }
 
+        ################################
         print json.dumps(transformed_cc)
         print '---'
+        ################################
 
 
 def list(arg):
